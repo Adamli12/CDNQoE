@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.10.7)  29 JAN 2020 23:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.10.7)  2 FEB 2020 23:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -671,30 +671,30 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 File: zhwindowsfonts.tex 2016/05/16 v2.4.2 Windows font map loader for pdfTeX and DVIPDFMx (CTEX)
 ) [1
 
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 20.
- [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 20.
+] [2])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 25.
+ [3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 25.
  (./literature_review.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 20.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 20.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 25.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 25.
 Package rerunfilecheck Info: File `literature_review.out' has not changed.
-(rerunfilecheck)             Checksum: 31F8DF590B67887467CA28798D2610E6;1030.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 20.
+(rerunfilecheck)             Checksum: 29E53110B08CEE23BA0839965C75E435;1400.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 25.
  ) 
 Here is how much of TeX's memory you used:
- 18903 strings out of 493014
- 334221 string characters out of 6137001
- 470467 words of memory out of 5000000
- 22285 multiletter control sequences out of 15000+600000
- 8993 words of font info for 32 fonts, out of 8000000 for 9000
+ 18912 strings out of 493014
+ 334354 string characters out of 6137001
+ 471467 words of memory out of 5000000
+ 22289 multiletter control sequences out of 15000+600000
+ 9301 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,6n,45p,10507b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on literature_review.pdf (2 pages, 89710 bytes).
+ 40i,6n,45p,10507b,452s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on literature_review.pdf (3 pages, 104987 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 94 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 20 named destinations out of 1000 (max. 500000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 

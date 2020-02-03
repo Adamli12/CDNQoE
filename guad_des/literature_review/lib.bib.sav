@@ -64,21 +64,6 @@
   url       = {https://doi.org/10.1145/3341302.3342089},
 }
 
-@Article{DBLP:journals/network/WangCWXJ18,
-  author    = {Mowei Wang and Yong Cui and Xin Wang and Shihan Xiao and Junchen Jiang},
-  title     = {Machine Learning for Networking: Workflow, Advances and Opportunities},
-  journal   = {{IEEE} Network},
-  year      = {2018},
-  volume    = {32},
-  number    = {2},
-  pages     = {92--99},
-  bibsource = {dblp computer science bibliography, https://dblp.org},
-  biburl    = {https://dblp.org/rec/bib/journals/network/WangCWXJ18},
-  doi       = {10.1109/MNET.2017.1700200},
-  timestamp = {Fri, 20 Apr 2018 16:32:00 +0200},
-  url       = {https://doi.org/10.1109/MNET.2017.1700200},
-}
-
 @Article{DBLP:journals/adhoc/CiccoMP19,
   author    = {Luca De Cicco and Saverio Mascolo and Vittorio Palmisano},
   title     = {QoE-driven resource allocation for massive video distribution},
