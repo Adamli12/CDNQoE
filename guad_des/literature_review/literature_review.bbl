@@ -1,12 +1,12 @@
 \begin{thebibliography}{1}
 
-\bibitem{DBLP:conf/nsdi/JiangSMSS016}
-Junchen Jiang, Vyas Sekar, Henry Milner, Davis Shepherd, Ion Stoica, and Hui
-  Zhang.
-\newblock {CFA:} {A} practical prediction system for video qoe optimization.
-\newblock In {\em 13th {USENIX} Symposium on Networked Systems Design and
-  Implementation, {NSDI} 2016, Santa Clara, CA, USA, March 16-18, 2016}, pages
-  137--150, 2016.
+\bibitem{DBLP:conf/sigcomm/BalachandranSASSZ13}
+Athula Balachandran, Vyas Sekar, Aditya Akella, Srinivasan Seshan, Ion Stoica,
+  and Hui Zhang.
+\newblock Developing a predictive model of quality of experience for internet
+  video.
+\newblock In {\em {ACM} {SIGCOMM} 2013 Conference, SIGCOMM'13, Hong Kong,
+  China, August 12-16, 2013}, pages 339--350, 2013.
 
 \bibitem{DBLP:conf/globecom/ZhuMW016}
 Guowei Zhu, Chou Mo, Zhi Wang, and Wenwu Zhu.
@@ -15,13 +15,18 @@ Guowei Zhu, Chou Mo, Zhi Wang, and Wenwu Zhu.
 \newblock In {\em 2016 {IEEE} Global Communications Conference, {GLOBECOM}
   2016, Washington, DC, USA, December 4-8, 2016}, pages 1--6, 2016.
 
-\bibitem{DBLP:conf/sigcomm/BalachandranSASSZ13}
-Athula Balachandran, Vyas Sekar, Aditya Akella, Srinivasan Seshan, Ion Stoica,
-  and Hui Zhang.
-\newblock Developing a predictive model of quality of experience for internet
-  video.
-\newblock In {\em {ACM} {SIGCOMM} 2013 Conference, SIGCOMM'13, Hong Kong,
-  China, August 12-16, 2013}, pages 339--350, 2013.
+\bibitem{DBLP:conf/nsdi/JiangSMSS016}
+Junchen Jiang, Vyas Sekar, Henry Milner, Davis Shepherd, Ion Stoica, and Hui
+  Zhang.
+\newblock {CFA:} {A} practical prediction system for video qoe optimization.
+\newblock In {\em 13th {USENIX} Symposium on Networked Systems Design and
+  Implementation, {NSDI} 2016, Santa Clara, CA, USA, March 16-18, 2016}, pages
+  137--150, 2016.
+
+\bibitem{DBLP:journals/adhoc/CiccoMP19}
+Luca~De Cicco, Saverio Mascolo, and Vittorio Palmisano.
+\newblock Qoe-driven resource allocation for massive video distribution.
+\newblock {\em Ad Hoc Networks}, 89:170--176, 2019.
 
 \bibitem{DBLP:conf/icc/HaouariBEMG19}
 Fatima Haouari, Emna Baccour, Aiman Erbad, Amr Mohamed, and Mohsen Guizani.
@@ -38,15 +43,12 @@ Xu~Zhang, Siddhartha Sen, Daniar Kurniawan, Haryadi Gunawi, and Junchen Jiang.
   Communication, {SIGCOMM} 2019, Beijing, China, August 19-23, 2019}, pages
   289--302, 2019.
 
-\bibitem{DBLP:journals/network/WangCWXJ18}
-Mowei Wang, Yong Cui, Xin Wang, Shihan Xiao, and Junchen Jiang.
-\newblock Machine learning for networking: Workflow, advances and
-  opportunities.
-\newblock {\em {IEEE} Network}, 32(2):92--99, 2018.
-
-\bibitem{DBLP:journals/adhoc/CiccoMP19}
-Luca~De Cicco, Saverio Mascolo, and Vittorio Palmisano.
-\newblock Qoe-driven resource allocation for massive video distribution.
-\newblock {\em Ad Hoc Networks}, 89:170--176, 2019.
+\bibitem{201473}
+Junchen Jiang, Shijie Sun, Vyas Sekar, and Hui Zhang.
+\newblock Pytheas: Enabling data-driven quality of experience optimization
+  using group-based exploration-exploitation.
+\newblock In {\em 14th {USENIX} Symposium on Networked Systems Design and
+  Implementation ({NSDI} 17)}, pages 393--406, Boston, MA, March 2017. {USENIX}
+  Association.
 
 \end{thebibliography}

@@ -10,11 +10,42 @@
 The most commonly used method is randomly assign new users to currently available CDN(Content Delivery Networks), usually according to the hashed id of users. Apparently, this kind of round robin approach gives rise to a set of problems. For example, the dynamic CDN status is neglected. Furthermore, the QoE(Quality of Experience) of users are affected by various factors which may contain factors other than QoS(Quality of Service).
 \section{State of art works}
 \subsection{Prediction based}
-\subsubsection{CFA}
-\par It aims to capture the complex relationships between session features and vedio quality
-\par its pros and cons
+\subsubsection{confounding factors(2013)\cite{DBLP:conf/sigcomm/BalachandranSASSZ13}}
+\par It aims to develop a predictive model of engagement that accounts for the complex relationship between quality and engagement, the interdependencies between quality metrics(e.g., buffering, join time), and the confounding factors(e.g., device, genre) that impact different aspects of this learning. The dataset has 40 million video viewing sessions collected over 3 months spanning two popular video content providers in US. The model input are quality metrics and confounding factors, and it will output the prediction of the video engagement(QoE).
+\par Its main observation is that decision tree is expressive enough for the quality metrics, while not for confounding factors. Thus they captured several most important confounding factors and proposed a predictive model where a decision tree is trained for every combination of confounding factors. 
+\par Its accuracy on *** testbed is 
+\par Its pros and cons are
+\subsubsection{user mapping stradegies(2016)\cite{DBLP:conf/globecom/ZhuMW016}}
+\par Zhu et al. proposed a prediction model considering QoS metrics and the preference on videos of users. Afterwards they came up with a heuristic CDN mapping stradegy. The input when testtime is the video requests consist of (user, video), and a hyperparameter K. The output will be the mapping of (user, CDN).
+\par The used a simple but effective method to model the user preference: the cosine similarity between videos based on the categorial vector, and users based on weighted historical sum of videos vectors. Then they feed the QoS factors and this preference factor in to a decision tree to get the predicted QoE. The mapping stradegy is also straightfoward. They simulate the assignment of users randomly and pick K users who has the largest QoE improvement and change their CDN in reality.
+\par Its accuracy on *** testbed is 
+\par One of the disadvantages is that we can not change CDN for existing users frequently in live streaming scenarios, which is not compatible with the optimization part of this stradegy.
+\subsubsection{CFA(2016)\cite{DBLP:conf/nsdi/JiangSMSS016}}
+\par It aims to capture the complex relationships between session features and video quality. Furthermore, it tries to address the need of fresh updates. Also being a predictive model, CFA takes feautres of sessions under prediction as input, and outputs their assigned CDNs based on the prediction of QoE on every CDN.
+\par Its main observation is that few critical features is able to determine the QoE for a video session. Thus they proposed the prediction model which is formed by a critical feature learner and a quality estimator based on the sessions with the same critical features in a period of time. They also observed that critical features will remain for a relatively long period of time. Therefore CFA only updates the critical feature when there triggered(e.g., when the performence drop to a certain threshold). The quality estimator on the other hand is updated every ten seconds.
+\par Its accuracy on *** testbed is 
+\par The QoE metric used to evaluate the model is a simple weighted summation of several QoS metrics, which is homogeneous for users, so there is still space to alter the assignment of CDN to achieve better QoE by considering user heterogeneity.
+\subsubsection{k-NN VCP(2019)\cite{DBLP:journals/adhoc/CiccoMP19}}
+\par This system monitors the QoE delivered by any of the CDN belonging to its pool and selects the most performing one when a new video request is received. The VCP takes QoE feedbacks of old users and ISP(Internet Service Provider) from all users as inputs and output the assigned CDN for old users with bad QoE and new users.
+\par The authors performs a k-NN regression on the prediction of QoE by dividing users in to groups regarding CDN and ISP and taking means of the QoE. When a new user comes in the CDN ranker ranks the candidate CDN based on the QoE prediction and selects the best.
+\par Its accuracy on *** testbed is 
+\par The old users will be affected by new users and if their QoE declines they will be new users as well. Thus the greedy assignment for every users is not perfect.
+\subsubsection{crowdsourced live streaming(2019)\cite{DBLP:conf/icc/HaouariBEMG19}}
+\par This approach aims to minimize access delay and video stall costs by carefully choosing which edge server to allocate the broadcast vedio and how to migrate between servers.  Input: session features. Output: prediction of the video quality.
+\par The predictive part will predict the number of viewers expected near each cloud site. Based on the predicted results, the optimization part will allocate live videos replicas across the geo-distributed cloud sites near the viewers proximity by integral programming.
+\par Its accuracy on *** testbed is 
+\par Its pros and cons are
+\subsubsection{E2E(2019)\cite{DBLP:conf/sigcomm/Zhang0KGJ19}}
+\par E2E is the first resource allocation system that embraces user heterogeneity to allocate server-side resources in a QoE-aware manner. It is still a prediction based system, consisting of the prediction of QoE and the optimization of the total QoE. Like its predecessors, the input is the requests and it outputs the assignment.
+\par They made simple assumptions on the prediction part where the QoE is a single variable function of the sum of client and server side delay because they used database request as an example. However, considering the user heterogeneity means that the optimizing step will be much more difficult because they can not simply choose the best CDN or database for every user in a random order. On contrast, they have to take all users in the same time chunk in to consideration to make decisions. They managed to transform the complicated and coupled problem into two steps, and solved them seperately.
+\par Its accuracy on *** testbed is 
+\par The prediction part can be modified to a more expressive model to fit in the video session scenario.
 \subsection{E2 based}
-\subsection{user heterogeneity}
+\subsubsection{pytheas(2017)\cite{201473}}
+\par The authors believe that data-driven QoE optimization should instead be cast as a real-time exploration and exploitation(E2) process rather than as a prediction problem. Input: session features. Output: prediction of the video quality. The inputs includes historical measurements and the measurements of the requested session. The output will be the decision.
+\par Their argue that method based on prediction suffers from the prediction bias and slow reaction. Thus they proposed pytheas which formulates measurement collection(exploration) and decision making(exploitation) as a joint process with real-time QoE measurements using E2 process. They group the sessions based on the factors on which their QoE and best decisions depend, and run discounted UCB(Upper Confidence Bound) algorithm on each group.
+\par Its accuracy on *** testbed is 
+\par Its pros and cons are
 \section{User heterogeneity: a new way to improve QoE}
 \section{How we mitigate those drawbacks}
 
