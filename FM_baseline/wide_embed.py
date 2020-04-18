@@ -3,6 +3,12 @@ import pickle
 import torch
 import numpy as np
 import scipy.sparse
+import argparse
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("use_devicem", default=True, help="use the device model or not", type=bool)
+args = parser.parse_args()
 
 filename="../data/live_tagged_data.txt/live_tagged_data.txt"
 savefeaturename="../data/live_tagged_data.txt/feature.pkl"
@@ -94,45 +100,45 @@ tagn=len(dictset[3])#57, in feature vector 39:96(96 not included)
 ispn=len(dictset[4])#3
 sumn=cdnn+devicen+devicemodeln+tagn+ispn+4
 
-"""
-FMfeature=np.zeros((len(labelarray),sumn))
-for i in range(len(labelarray)):
-    featurerow=np.zeros(sumn)
-    row=featurearray[i]
-    cdn=int(row[0])
-    device=int(row[1])
-    devicemodel=int(row[2])
-    tag=int(row[7])
-    isp=int(row[8])
-    featurerow[cdn]=1
-    featurerow[cdnn+device]=1
-    featurerow[cdnn+devicen+devicemodel]=1
-    for j in range(3,7):
-        featurerow[cdnn+devicen+devicemodeln+j-3]=row[j]
-    featurerow[cdnn+devicen+devicemodeln+4+tag]=1#
-    featurerow[cdnn+devicen+devicemodeln+4+tagn+isp]=1
-    FMfeature[i]=featurerow
-    if i%1000==0:
-        print(i,"/",len(labelarray))
-"""
-sumn=sumn-devicemodeln
-FMfeature=np.zeros((len(labelarray),sumn))
-for i in range(len(labelarray)):
-    featurerow=np.zeros(sumn)
-    row=featurearray[i]
-    cdn=int(row[0])
-    device=int(row[1])
-    tag=int(row[7])
-    isp=int(row[8])
-    featurerow[cdn]=1
-    featurerow[cdnn+device]=1
-    for j in range(3,7):
-        featurerow[cdnn+devicen+j-3]=row[j]
-    featurerow[cdnn+devicen+4+tag]=1
-    featurerow[cdnn+devicen+4+tagn+isp]=1
-    FMfeature[i]=featurerow
-    if i%1000==0:
-        print(i,"/",len(labelarray))
+if args.use_devicem==True:
+    FMfeature=np.zeros((len(labelarray),sumn))
+    for i in range(len(labelarray)):
+        featurerow=np.zeros(sumn)
+        row=featurearray[i]
+        cdn=int(row[0])
+        device=int(row[1])
+        devicemodel=int(row[2])
+        tag=int(row[7])
+        isp=int(row[8])
+        featurerow[cdn]=1
+        featurerow[cdnn+device]=1
+        featurerow[cdnn+devicen+devicemodel]=1
+        for j in range(3,7):
+            featurerow[cdnn+devicen+devicemodeln+j-3]=row[j]
+        featurerow[cdnn+devicen+devicemodeln+4+tag]=1#
+        featurerow[cdnn+devicen+devicemodeln+4+tagn+isp]=1
+        FMfeature[i]=featurerow
+        if i%1000==0:
+            print(i,"/",len(labelarray))
+else:
+    sumn=sumn-devicemodeln
+    FMfeature=np.zeros((len(labelarray),sumn))
+    for i in range(len(labelarray)):
+        featurerow=np.zeros(sumn)
+        row=featurearray[i]
+        cdn=int(row[0])
+        device=int(row[1])
+        tag=int(row[7])
+        isp=int(row[8])
+        featurerow[cdn]=1
+        featurerow[cdnn+device]=1
+        for j in range(3,7):
+            featurerow[cdnn+devicen+j-3]=row[j]
+        featurerow[cdnn+devicen+4+tag]=1
+        featurerow[cdnn+devicen+4+tagn+isp]=1
+        FMfeature[i]=featurerow
+        if i%1000==0:
+            print(i,"/",len(labelarray))
 
 
 cscmatrix=scipy.sparse.csc_matrix(FMfeature)
