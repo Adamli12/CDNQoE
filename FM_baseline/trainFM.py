@@ -7,9 +7,11 @@ import pickle
 from sklearn.model_selection import train_test_split
 import scipy.sparse
 
-BATCH_SIZE = 128
-LEARNING_RATE = 5e-6
+BATCH_SIZE = 16
+LEARNING_RATE = 5e-4
 iterative = True
+embed_dim=20
+n_classes=5
 
 featurename="../data/live_tagged_data.txt/fmfeature.pkl"
 labelname="../data/live_tagged_data.txt/label.pkl"
@@ -75,6 +77,6 @@ fm64=FactorizationMachine(feature.shape[1],64,LEARNING_RATE,5,results_dir)
 fm64.train(train_loader,test_loader)
 fm64.save()
 """
-MLP_model=FactorizationMachine(feature.shape[1],64,LEARNING_RATE,5,results_dir,"MLP")
-MLP_model.train(train_loader,test_loader)
-MLP_model.save()
+DeepFM_model=FactorizationMachine(feature.shape[1],embed_dim,LEARNING_RATE,n_classes,results_dir,"DeepFM")
+DeepFM_model.train_DeepFM(train_loader,test_loader)
+DeepFM_model.save()
